@@ -38,12 +38,15 @@
     "lolex": "^1.5.0",
     "mocha": "^3.4.2",
     "nock": "^8.2.1",
-    "supertest": "^2.0.1"
+    "supertest": "^2.0.1",
+    "vercel": "19.1.2"
   },
   "scripts": {
+    "start": "node server.js",
     "lint": "eslint .",
     "test": "mocha ./test/test*.js --reporter spec",
-    "test-coverage": "istanbul cover ./node_modules/.bin/_mocha -- test/test.js test/test-ratelimit.js --reporter spec"
+    "test-coverage": "istanbul cover ./node_modules/.bin/_mocha -- test/test.js test/test-ratelimit.js --reporter spec",
+    "deploy": "vercel --prod --token $TOKEN"
   },
   "engines": {
     "node": ">=0.10.0"
